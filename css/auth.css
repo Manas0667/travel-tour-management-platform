@@ -1,0 +1,160 @@
+/* =========================================================
+   TRAVEL & TOUR MANAGEMENT PLATFORM - AUTHENTICATION STYLES
+   Simple, Beginner-Friendly CSS
+   ========================================================= */
+
+/* Basic Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page Background and Centering */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  color: #333333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Main Form Card Container */
+.auth-container {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  padding: 30px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Headings */
+.site-title {
+  color: #0066cc;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.form-title {
+  color: #222222;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Form Styles */
+.auth-form {
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #444444;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #0066cc;
+}
+
+/* Checkbox Row */
+.checkbox-group {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #555555;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.checkbox-group label {
+  cursor: pointer;
+  font-weight: normal;
+}
+
+/* Buttons */
+.btn-submit {
+  width: 100%;
+  padding: 11px;
+  background-color: #0066cc;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.btn-submit:hover {
+  background-color: #004c99;
+}
+
+/* Links */
+.switch-link,
+.home-link {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.switch-link a,
+.home-link a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.switch-link a:hover,
+.home-link a:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  margin: 15px 0 10px;
+  border: none;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Responsive Media Query for Mobile Devices */
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 20px;
+  }
+
+  .site-title {
+    font-size: 18px;
+  }
+
+  .form-title {
+    font-size: 18px;
+  }
+}
