@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TourVista - Travel &amp; Tour Management Platform</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">🌍 TourVista</a>
+
+      <button class="menu-btn" id="menuBtn">&#9776;</button>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#tours">Tours</a></li>
+          <li><a href="#why-us">Why Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="login.html" class="btn-login">Login</a></li>
+          <li><a href="register.html" class="btn-register">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>Explore the World</h1>
+      <p>Discover amazing destinations, plan your perfect trip, and book affordable tour packages with ease.</p>
+      <a href="#tours" class="btn-primary">Explore Tours</a>
+    </div>
+  </section>
+
+  <!-- SEARCH SECTION -->
+  <section class="search-section" id="search">
+    <div class="container">
+      <div class="search-box">
+        <input type="text" id="searchDest" placeholder="Destination (e.g. Goa, Manali)">
+        <input type="date" id="searchDate">
+        <select id="searchType">
+          <option value="">Tour Type</option>
+          <option value="beach">Beach</option>
+          <option value="mountain">Mountain</option>
+          <option value="heritage">Heritage</option>
+          <option value="international">International</option>
+        </select>
+        <button class="btn-primary" id="searchBtn">Search Tours</button>
+      </div>
+      <p class="search-result" id="searchResult"></p>
+    </div>
+  </section>
+
+  <!-- POPULAR DESTINATIONS -->
+  <section class="section" id="destinations">
+    <div class="container">
+      <h2 class="section-title">Popular Destinations</h2>
+      <p class="section-sub">Explore India's most loved travel spots</p>
+      <div class="cards-grid">
+
+        <div class="card" data-type="beach">
+          <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&q=80" alt="Goa beach with palm trees">
+          <div class="card-body">
+            <h3>Goa</h3>
+            <p>Famous for golden beaches, seafood, nightlife, and Portuguese architecture.</p>
+            <a href="#tours" class="btn-outline">Explore</a>
+          </div>
+        </div>
+
+        <div class="card" data-type="mountain">
+          <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&q=80" alt="Snowy mountains in Manali">
+          <div class="card-body">
+            <h3>Manali</h3>
+            <p>Snow-covered Himalayan peaks, river rafting, and Solang Valley adventures.</p>
+            <a href="#tours" class="btn-outline">Explore</a>
+          </div>
+        </div>
+
+        <div class="card" data-type="mountain">
+          <img src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=600&q=80" alt="Dal Lake in Kashmir">
+          <div class="card-body">
+            <h3>Kashmir</h3>
+            <p>Paradise on Earth — Dal Lake, Gulmarg, and stunning Mughal gardens.</p>
+            <a href="#tours" class="btn-outline">Explore</a>
+          </div>
+        </div>
+
+        <div class="card" data-type="heritage">
+          <img src="https://images.unsplash.com/photo-1603262110263-fb010d6e75dc?w=600&q=80" alt="Hawa Mahal in Jaipur">
+          <div class="card-body">
+            <h3>Jaipur</h3>
+            <p>The Pink City — Amber Fort, City Palace, and vibrant Rajasthani culture.</p>
+            <a href="#tours" class="btn-outline">Explore</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED TOURS -->
+  <section class="section bg-light" id="tours">
+    <div class="container">
+      <h2 class="section-title">Featured Tour Packages</h2>
+      <p class="section-sub">Book affordable and well-planned tour packages</p>
+      <div class="cards-grid">
+
+        <div class="tour-card">
+          <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=600&q=80" alt="Goa beach tour package">
+          <div class="card-body">
+            <span class="badge">Best Seller</span>
+            <h3>Goa Beach Escape</h3>
+            <p>📍 Goa &nbsp;&nbsp; ⏱ 4 Days / 3 Nights</p>
+            <p class="price">Starting from <strong>$349</strong> / person</p>
+            <a href="register.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+
+        <div class="tour-card">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&q=80" alt="Manali mountain tour">
+          <div class="card-body">
+            <span class="badge">Popular</span>
+            <h3>Manali Adventure Tour</h3>
+            <p>📍 Manali &nbsp;&nbsp; ⏱ 5 Days / 4 Nights</p>
+            <p class="price">Starting from <strong>$420</strong> / person</p>
+            <a href="register.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+
+        <div class="tour-card">
+          <img src="https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?w=600&q=80" alt="Kashmir tour package">
+          <div class="card-body">
+            <span class="badge">Trending</span>
+            <h3>Enchanting Kashmir</h3>
+            <p>📍 Kashmir &nbsp;&nbsp; ⏱ 6 Days / 5 Nights</p>
+            <p class="price">Starting from <strong>$580</strong> / person</p>
+            <a href="register.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section" id="why-us">
+    <div class="container">
+      <h2 class="section-title">Why Choose Us</h2>
+      <p class="section-sub">What makes TourVista different</p>
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h3>Affordable Packages</h3>
+          <p>We offer the best travel deals with no hidden charges. Quality trips at the lowest prices.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📅</div>
+          <h3>Easy Booking</h3>
+          <p>Book your dream vacation in just a few clicks. Simple, fast, and hassle-free process.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📞</div>
+          <h3>24/7 Support</h3>
+          <p>Our travel experts are available round the clock to assist you before and during your trip.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section bg-light" id="testimonials">
+    <div class="container">
+      <h2 class="section-title">What Travelers Say</h2>
+      <div class="cards-grid">
+
+        <div class="testimonial">
+          <p>"Our Kashmir trip was absolutely magical. The houseboat, the guides, the scenery — everything was perfect!"</p>
+          <div class="stars">★★★★★</div>
+          <strong>— Sarah Jenkins</strong>
+        </div>
+
+        <div class="testimonial">
+          <p>"TourVista made our Dubai trip so easy to plan. The 24/7 support team was super helpful. Highly recommended!"</p>
+          <div class="stars">★★★★★</div>
+          <strong>— Rohan Sharma</strong>
+        </div>
+
+        <div class="testimonial">
+          <p>"Kerala backwaters was a dream experience. Every detail was handled perfectly. Will definitely book again!"</p>
+          <div class="stars">★★★★★</div>
+          <strong>— Elena Rostova</strong>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <h2>Ready for Your Next Adventure?</h2>
+      <p>Start planning your dream trip today with TourVista.</p>
+      <a href="register.html" class="btn-primary">Get Started</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h3>🌍 TourVista</h3>
+        <p>A Travel &amp; Tour Management Platform for exploring destinations and booking packages.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#tours">Tours</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>📧 support@tourvista.com</p>
+        <p>📞 +91 98765 43210</p>
+        <p>📍 New Delhi, India</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 TourVista. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
