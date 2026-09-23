@@ -1,22 +1,9 @@
-/* =====================================================
-   packages.css - Stylesheet for Tour Packages Page
-   Project: WanderVista Travel (College Project)
-   Design: Simple, clean, beginner-friendly CSS
-   ===================================================== */
-
-
-/* -----------------------------------------
-   RESET: Remove default browser spacing
------------------------------------------ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* -----------------------------------------
-   BODY: Base font and background
------------------------------------------ */
 body {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
@@ -25,9 +12,6 @@ body {
     line-height: 1.6;
 }
 
-/* -----------------------------------------
-   LINKS: Remove underline by default
------------------------------------------ */
 a {
     text-decoration: none;
     color: inherit;
@@ -37,17 +21,12 @@ ul {
     list-style: none;
 }
 
-
-/* -----------------------------------------
-   HEADER
------------------------------------------ */
 .header {
-    background-color: #cce5ff; /* Light blue background */
+    background-color: #cce5ff; 
     border-bottom: 2px solid #339af0;
     padding: 14px 0;
 }
 
-/* Inner wrapper: logo on left, nav on right */
 .header-inner {
     max-width: 1100px;
     margin: 0 auto;
@@ -57,14 +36,12 @@ ul {
     justify-content: space-between;
 }
 
-/* Website name / logo text */
 .logo {
     font-size: 22px;
     font-weight: bold;
     color: #1a5276;
 }
 
-/* Navigation links in a row */
 .nav-links {
     display: flex;
     gap: 20px;
@@ -77,21 +54,15 @@ ul {
     border-radius: 4px;
 }
 
-/* Highlight the current page link */
 .nav-links a.active {
     background-color: #1a6fc4;
     color: #ffffff;
 }
 
-/* Hover effect on nav links */
 .nav-links a:hover {
     background-color: #a8d4f7;
 }
 
-
-/* -----------------------------------------
-   PAGE TITLE
------------------------------------------ */
 .page-title {
     text-align: center;
     padding: 30px 20px 10px;
@@ -110,63 +81,49 @@ ul {
     color: #666666;
 }
 
-
-/* -----------------------------------------
-   PACKAGES SECTION
------------------------------------------ */
 .packages-section {
     padding: 30px 20px;
     max-width: 1100px;
     margin: 0 auto;
 }
 
-/* Flex container for the 4 cards */
 .cards-container {
     display: flex;
-    flex-wrap: wrap;      /* Cards wrap to next line on smaller screens */
+    flex-wrap: wrap;     
     gap: 24px;
     justify-content: center;
 }
 
-
-/* -----------------------------------------
-   PACKAGE CARD
------------------------------------------ */
 .card {
     background-color: #ffffff;
     border: 1px solid #cccccc;
     border-radius: 6px;
-    width: 240px;          /* Fixed card width */
-    overflow: hidden;      /* Keep image inside card border */
+    width: 240px;        
+    overflow: hidden;    
 }
 
-/* Slight shadow and border change on hover */
 .card:hover {
     border-color: #1a6fc4;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Card image */
 .card img {
     width: 100%;
     height: 160px;
-    object-fit: cover;     /* Fill the area without stretching */
+    object-fit: cover;     
     display: block;
 }
 
-/* Card text content area */
 .card-body {
     padding: 14px;
 }
 
-/* Package name */
 .card-body h2 {
     font-size: 16px;
     color: #1a5276;
     margin-bottom: 6px;
 }
 
-/* Duration and price labels */
 .duration,
 .price {
     font-size: 13px;
@@ -179,7 +136,6 @@ ul {
     color: #1a6fc4;
 }
 
-/* Short description */
 .description {
     font-size: 13px;
     color: #666666;
@@ -188,10 +144,6 @@ ul {
     line-height: 1.5;
 }
 
-
-/* -----------------------------------------
-   BUTTON
------------------------------------------ */
 .btn {
     display: inline-block;
     padding: 7px 16px;
@@ -202,24 +154,19 @@ ul {
     border: 1px solid #1a6fc4;
 }
 
-/* Simple colour swap on hover — no animation */
 .btn:hover {
     background-color: #145aa0;
     border-color: #145aa0;
 }
 
-
-/* -----------------------------------------
-   FOOTER
------------------------------------------ */
 .footer {
-    background-color: #1a3a5c;  /* Dark blue footer */
+    background-color: #1a3a5c;  
     color: #cccccc;
     margin-top: 40px;
     padding-top: 30px;
 }
 
-/* Two-column layout for footer content */
+
 .footer-inner {
     max-width: 1100px;
     margin: 0 auto;
@@ -229,7 +176,6 @@ ul {
     flex-wrap: wrap;
 }
 
-/* Each footer column */
 .footer-col h3 {
     font-size: 15px;
     color: #ffffff;
@@ -238,7 +184,6 @@ ul {
     padding-bottom: 6px;
 }
 
-/* Footer quick links */
 .footer-col ul {
     display: flex;
     flex-direction: column;
@@ -254,16 +199,14 @@ ul {
     color: #ffffff;
 }
 
-/* Footer contact text */
 .footer-col p {
     font-size: 13px;
     color: #aaaacc;
     margin-bottom: 5px;
 }
 
-/* Copyright bar at the very bottom */
 .footer-bottom {
-    background-color: #112840;  /* Slightly darker strip */
+    background-color: #112840;  
     text-align: center;
     padding: 12px 20px;
     font-size: 12px;
@@ -271,18 +214,13 @@ ul {
     border-top: 1px solid #2a4a6c;
 }
 
-
-/* -----------------------------------------
-   RESPONSIVE: Stack cards on small screens
------------------------------------------ */
 @media (max-width: 600px) {
 
-    /* Full-width cards on mobile */
+   
     .card {
         width: 100%;
     }
 
-    /* Stack header items vertically on small screens */
     .header-inner {
         flex-direction: column;
         gap: 12px;
@@ -295,7 +233,6 @@ ul {
         gap: 10px;
     }
 
-    /* Stack footer columns */
     .footer-inner {
         flex-direction: column;
         gap: 24px;
