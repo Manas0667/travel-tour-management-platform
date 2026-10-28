@@ -1,70 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Travel &amp; Tour Management Platform</title>
-  <link rel="stylesheet" href="css/auth.css">
-</head>
-<body>
+<h1>MyTube</h1>
 
-  <main class="auth-container">
-    <!-- Website Heading -->
-    <h1 class="site-title">Travel &amp; Tour Management Platform</h1>
-    
-    <!-- Page Heading -->
-    <h2 class="form-title">Login</h2>
+<input placeholder="Search">
 
-    <!-- Login Form -->
-    <form action="#" method="POST" class="auth-form">
+<div class="container">
 
-      <!-- Email Field -->
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input 
-          type="email" 
-          id="email" 
-          name="email" 
-          placeholder="Enter your email" 
-          required
-        >
-      </div>
+<div>Video 1</div>
+<div>Video 2</div>
+<div>Video 3</div>
+<div>Video 4</div>
 
-      <!-- Password Field -->
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input 
-          type="password" 
-          id="password" 
-          name="password" 
-          placeholder="Enter your password" 
-          required
-        >
-      </div>
-
-      <!-- Remember Me Checkbox -->
-      <div class="checkbox-group">
-        <input type="checkbox" id="remember" name="remember">
-        <label for="remember">Remember Me</label>
-      </div>
-
-      <!-- Login Button -->
-      <button type="submit" class="btn-submit">Login</button>
-
-      <!-- Switch to Register Link -->
-      <p class="switch-link">
-        Don't have an account? <a href="register.html">Register</a>
-      </p>
-
-      <hr class="divider">
-
-      <!-- Back to Home Link -->
-      <p class="home-link">
-        <a href="index.html">Back to Home</a>
-      </p>
-
-    </form>
-  </main>
-
-</body>
-</html>
+</div>
+ <style>
+  .container {
+    display:grid;;
+    grid-template-coloumns:repeat(4,1fr);
+    gap: 10px;
+  
+  }
+  .container div{
+    background:light grey;
+    padding:20px;
+  }

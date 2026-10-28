@@ -1,6 +1,6 @@
 // ============================================
 // TourVista - Travel & Tour Management Platform
-// Member 2: Homepage & Destinations Search Logic
+// Member 2: Homepage & Destinations Search & Filter Logic
 // File: js/main.js
 // ============================================
 
@@ -13,30 +13,26 @@ const searchResult = document.getElementById('searchResult');
 // Step 2: Destinations section ke sabhi destination cards ko select karna
 const destinationCards = document.querySelectorAll('#destinations .card');
 
-// Step 3: Search button par 'click' event listener lagana
-searchBtn.addEventListener('click', function () {
-  // User ke enter kiye gaye values lena aur lowercase + trim karna
+// Step 3: Main function jo Search button click hone par chalega
+function filterDestinations() {
+  // User ke enter kiye gaye values lena (lowercase + trim karke)
   const destValue = searchDest.value.toLowerCase().trim();
   const typeValue = searchType.value.toLowerCase().trim();
 
-  // Kitne cards match hue unhe count karne ke liye variable
   let matchCount = 0;
 
-  // Step 4: Sabhi destination cards par forEach loop chalana
+  // Step 4: Sabhi cards par loop chalana using forEach()
   destinationCards.forEach(function (card) {
-    // Har card ka title (Goa, Manali, etc.) aur data-type lena
     const cardTitle = card.querySelector('h3').textContent.toLowerCase();
     const cardType = (card.getAttribute('data-type') || '').toLowerCase();
 
-    // Check 1: Kya destination name match karta hai?
-    // Agar search box empty hai, to matchesName true hoga
-    const matchesName = (destValue === '' || cardTitle.includes(destValue));
+    // Check 1: Destination name match ya search box empty
+    const matchesName = (destValue === '' || cardTitle.includes(destValue) || cardType.includes(destValue));
 
-    // Check 2: Kya tour type match karta hai?
-    // Agar dropdown me koi type select nahi kiya, to matchesType true hoga
+    // Check 2: Tour type dropdown match ya All Types (empty)
     const matchesType = (typeValue === '' || cardType === typeValue);
 
-    // Step 5: if/else se card ko show ya hide karna
+    // Step 5: Dono conditions match hone par card show karna, warna hide karna
     if (matchesName && matchesType) {
       card.style.display = 'block'; // Card dikhana
       matchCount++;
@@ -45,20 +41,31 @@ searchBtn.addEventListener('click', function () {
     }
   });
 
-  // Step 6: Search result message update karna
+  // Step 6: Result message update karna
   if (destValue === '' && typeValue === '') {
-    // Agar dono inputs khali hain, to sabhi cards dikhenge aur message clear ho jayega
+    // Agar dono search fields empty/reset hain, to message clear karna
     searchResult.textContent = '';
   } else if (matchCount === 0) {
-    // Agar koi card match nahi hua, to "not found" message dikhana
-    searchResult.textContent = 'No destinations found matching your search.';
+    // Agar koi card match nahi hua, to "No destinations found" message dikhana
+    searchResult.textContent = 'No destinations found';
   } else {
-    // Agar match mil gaya, to count show karna
+    // Agar matches mile, to count show karna
     searchResult.textContent = 'Showing ' + matchCount + ' destination(s).';
+  }
+}
+
+// Step 7: Search button par click event listener lagana
+// (Search tabhi execute hogi jab user 'Search Tours' button click karega)
+searchBtn.addEventListener('click', filterDestinations);
+
+// User search box me 'Enter' key dabakar bhi search trigger kar sakta hai
+searchDest.addEventListener('keypress', function (event) {
+  if (event.key === 'Enter') {
+    filterDestinations();
   }
 });
 
-// Bonus: Mobile menu toggle ke liye simple code
+// Mobile menu toggle ke liye simple code
 const menuBtn = document.getElementById('menuBtn');
 const nav = document.querySelector('nav');
 

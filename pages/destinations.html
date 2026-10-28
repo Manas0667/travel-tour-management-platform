@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destinations - TourVista</title>
+  <link rel="stylesheet" href="../css/destinations.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">🌍 TourVista</a>
+      <button class="menu-btn" id="menuBtn">&#9776;</button>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="destinations.html" class="active">Destinations</a></li>
+          <li><a href="places.html">Places</a></li>
+          <li><a href="../index.html#tours">Tours</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="../login.html" class="btn-login">Login</a></li>
+          <li><a href="../register.html" class="btn-register">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HERO BANNER -->
+  <section class="page-hero">
+    <h1>🗺️ Explore Destinations</h1>
+    <p>Browse our handpicked destinations from beaches to mountains. Find your next adventure.</p>
+  </section>
+
+  <!-- SEARCH BAR -->
+  <div class="search-bar">
+    <div class="search-inner">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search destinations (e.g. Goa, Bali...)"
+      >
+      <select id="typeFilter">
+        <option value="">All Types</option>
+        <option value="beach">Beach</option>
+        <option value="mountain">Mountain</option>
+        <option value="heritage">Heritage</option>
+        <option value="international">International</option>
+      </select>
+      <button class="btn-primary" id="searchBtn">Search</button>
+    </div>
+  </div>
+
+  <!-- DESTINATIONS SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>All Destinations</h2>
+        <p>Click "View Places" on any destination to explore specific places to visit.</p>
+      </div>
+
+      <!-- Cards rendered by destinations.js -->
+      <div class="dest-grid" id="dest-grid"></div>
+
+      <!-- Shown when no results found -->
+      <p class="no-results" id="no-results">
+        No destinations found. Try a different search.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <h3>🌍 TourVista</h3>
+        <p>Your trusted Travel &amp; Tour Management Platform.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <p><a href="../index.html" style="color:#a0aec0;">Home</a></p>
+        <p><a href="destinations.html" style="color:#a0aec0;">Destinations</a></p>
+        <p><a href="places.html" style="color:#a0aec0;">Places</a></p>
+        <p><a href="../login.html" style="color:#a0aec0;">Login</a></p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>📧 support@tourvista.com</p>
+        <p>📞 +91 98765 43210</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 TourVista. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/destinations.js"></script>
+</body>
+</html>
