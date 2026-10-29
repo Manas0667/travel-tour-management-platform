@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookings - TourVista</title>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/bookings.css">
+</head>
+<body>
+
+
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">TourVista</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="planner.html">Planner</a></li>
+          <li><a href="bookings.html" class="active">Bookings</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <main class="container">
+    
+    <div class="page-header">
+      <h1>Book Your Tour</h1>
+      <p>Confirm your tour package details and calculate total estimation.</p>
+    </div>
+
+    <div class="bookings-layout">
+
+      <!-- Left Side: Booking Form -->
+      <div class="booking-card">
+        <h2>Passenger Details</h2>
+        <form id="booking-form">
+          
+          <div class="form-group">
+            <label for="package-select">Select Package</label>
+            <select id="package-select">
+              <option value="goa">Goa Beach Paradise (₹19,999)</option>
+              <option value="manali">Manali Hill Escape (₹18,500)</option>
+              <option value="jaipur">Jaipur Heritage Tour (₹12,000)</option>
+              <option value="kerala">Kerala Backwaters (₹22,000)</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="full-name">Full Name</label>
+              <input type="text" id="full-name" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="Email" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="guests">Number of Guests</label>
+              <input type="number" id="guests" min="1" max="200" value="1" required>
+            </div>
+            <div class="form-group">
+              <label for="travel-date">Travel Date</label>
+              <input type="date" id="travel-date" required>
+            </div>
+          </div>
+
+         
+          <div class="summary-box">
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <strong id="subtotal-price">₹19,999</strong>
+            </div>
+            <div class="summary-row">
+              <span>GST</span>
+              <strong id="tax-price">₹750</strong>
+            </div>
+            <div class="summary-row total">
+              <span>Total Price</span>
+              <strong id="total-price">₹15,749</strong>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary">Confirm & Pay</button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="bookings.js"></script>
+</body>
+</html>
