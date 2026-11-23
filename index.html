@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,14 +23,24 @@
           <li><a href="#tours">Tours</a></li>
           <li><a href="#why-us">Why Us</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="login.html" class="btn-login">Login</a></li>
-          <li><a href="register.html" class="btn-register">Register</a></li>
+          <li id="login-nav">
+            <a href="login.html" class="btn-login">Login</a>
+          </li>
+          <li id="register-nav">
+            <a href="register.html" class="btn-register">Register</a>
+          </li>
+          <li id="user-nav" style="display: none;">
+            <span id="welcome-user"></span>
+          </li>
+          <li id="logout-nav" style="display: none;">
+            <button id="logout-btn" class="btn-login">Logout</button>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
 
-  
+
   <section class="hero" id="hero">
     <div class="hero-content">
       <h1>Explore the World</h1>
@@ -38,7 +49,7 @@
     </div>
   </section>
 
-  
+
   <section class="search-section" id="search">
     <div class="container">
       <div class="search-box">
@@ -57,17 +68,16 @@
     </div>
   </section>
 
-  
+
   <section class="section" id="destinations">
     <div class="container">
       <h2 class="section-title">Popular Destinations</h2>
       <p class="section-sub">Explore India's most loved travel spots</p>
       <div class="cards-grid">
 
-        
-
         <div class="card" data-type="beach">
-          <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&q=80" alt="Goa beach with palm trees">
+          <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&q=80"
+            alt="Goa beach with palm trees">
           <div class="card-body">
             <h3>Goa</h3>
             <p>Famous for golden beaches, seafood, nightlife, and Portuguese architecture.</p>
@@ -76,7 +86,8 @@
         </div>
 
         <div class="card" data-type="mountain">
-          <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&q=80" alt="Snowy mountains in Manali">
+          <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&q=80"
+            alt="Snowy mountains in Manali">
           <div class="card-body">
             <h3>Manali</h3>
             <p>Snow-covered Himalayan peaks, river rafting, and Solang Valley adventures.</p>
@@ -94,20 +105,19 @@
         </div>
 
         <div class="card" data-type="heritage">
-        <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&q=80" alt="Hawa Mahal in Jaipur">
+          <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&q=80" alt="Hawa Mahal in Jaipur">
           <div class="card-body">
             <h3>Jaipur</h3>
             <p>The Pink City — Amber Fort, City Palace, and vibrant Rajasthani culture.</p>
             <a href="#tours" class="btn-outline">Explore</a>
           </div>
         </div>
- 
-        
+
       </div>
     </div>
   </section>
 
-  
+
   <section class="section bg-light" id="tours">
     <div class="container">
       <h2 class="section-title">Featured Tour Packages</h2>
@@ -180,26 +190,29 @@
     </div>
   </section>
 
-  
+
   <section class="section bg-light" id="testimonials">
     <div class="container">
       <h2 class="section-title">What Travelers Say</h2>
       <div class="cards-grid">
 
         <div class="testimonial">
-          <p>"Our Kashmir trip was absolutely magical. The houseboat, the guides, the scenery — everything was perfect!"</p>
+          <p>"Our Kashmir trip was absolutely magical. The houseboat, the guides, the scenery — everything was perfect!"
+          </p>
           <div class="stars">★★★★★</div>
           <strong>— Sarah Jenkins</strong>
         </div>
 
         <div class="testimonial">
-          <p>"TourVista made our Dubai trip so easy to plan. The 24/7 support team was super helpful. Highly recommended!"</p>
+          <p>"TourVista made our Dubai trip so easy to plan. The 24/7 support team was super helpful. Highly
+            recommended!"</p>
           <div class="stars">★★★★★</div>
           <strong>— Rohan Sharma</strong>
         </div>
 
         <div class="testimonial">
-          <p>"Kerala backwaters was a dream experience. Every detail was handled perfectly. Will definitely book again!"</p>
+          <p>"Kerala backwaters was a dream experience. Every detail was handled perfectly. Will definitely book again!"
+          </p>
           <div class="stars">★★★★★</div>
           <strong>— Elena Rostova</strong>
         </div>
@@ -208,7 +221,7 @@
     </div>
   </section>
 
-  
+
   <section class="cta-section" id="contact">
     <div class="container">
       <h2>Ready for Your Next Adventure?</h2>
@@ -217,7 +230,7 @@
     </div>
   </section>
 
-  
+
   <footer class="footer" id="footer">
     <div class="container footer-inner">
       <div class="footer-col">
@@ -249,4 +262,5 @@
   <!-- JavaScript file connected -->
   <script src="js/main.js"></script>
 </body>
+
 </html>

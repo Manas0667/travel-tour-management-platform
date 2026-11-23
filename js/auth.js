@@ -1,15 +1,14 @@
+// COMMON MESSAGE FUNCTION
 
 function showMessage(element, text, isSuccess) {
   element.textContent = text;
   element.style.display = "block";
 
   if (isSuccess) {
-    // Green styling for success message
     element.style.color = "#155724";
     element.style.backgroundColor = "#d4edda";
     element.style.border = "1px solid #c3e6cb";
   } else {
-    // Red styling for error message
     element.style.color = "#721c24";
     element.style.backgroundColor = "#f8d7da";
     element.style.border = "1px solid #f5c6cb";
@@ -17,61 +16,228 @@ function showMessage(element, text, isSuccess) {
 }
 
 
-// 1. LOGIN FORM VALIDATION
+// 1. LOGIN AUTHENTICATION
 
 const loginForm = document.getElementById("login-form");
 
 if (loginForm) {
+
   loginForm.addEventListener("submit", function (event) {
+
     event.preventDefault();
+
     const emailInput = document.getElementById("email");
     const passwordInput = document.getElementById("password");
     const messageBox = document.getElementById("login-message");
+
     const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
+    const password = passwordInput.value;
+
+    // Check empty fields
+
     if (email === "") {
       showMessage(messageBox, "Please enter your email address.", false);
-    } else if (password === "") {
-      showMessage(messageBox, "Please enter your password.", false);
-    } else if (password.length < 6) {
-      showMessage(messageBox, "Password must be at least 6 characters long.", false);
-    } else {
-      showMessage(
-        messageBox,
-        "Form passed frontend validation! (Demo only - user is not authenticated)",
-        true
-      );
     }
+
+    else if (password === "") {
+      showMessage(messageBox, "Please enter your password.", false);
+    }
+
+    else if (password.length < 6) {
+      showMessage(messageBox, "Password must be at least 6 characters long.", false);
+    }
+
+    else {
+
+      // Get registered users from LocalStorage
+
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+
+      // Find user by email
+
+      const existingUser = users.find(function (user) {
+        return user.email.toLowerCase() === email.toLowerCase();
+      });
+
+      if (!existingUser) {
+
+        showMessage(messageBox, "Account not found. Please register first.", false);
+
+      }
+
+      else if (existingUser.password !== password) {
+
+        showMessage(messageBox, "Incorrect password. Please try again.", false);
+
+      }
+
+      else {
+
+        // Save logged-in user information
+
+        localStorage.setItem("currentUser", JSON.stringify({
+          name: existingUser.name,
+          email: existingUser.email
+        }));
+
+        showMessage(
+          messageBox,
+          "Login successful! Welcome, " + existingUser.name,
+          true
+        );
+
+        // Redirect to homepage
+
+        setTimeout(function () {
+          window.location.href = "index.html";
+        }, 1000);
+
+      }
+
+    }
+
   });
+
 }
+
+
 // 2. REGISTRATION FORM VALIDATION
+
 const registerForm = document.getElementById("register-form");
 
 if (registerForm) {
+
   registerForm.addEventListener("submit", function (event) {
+
     event.preventDefault();
+
     const nameInput = document.getElementById("fullname");
     const emailInput = document.getElementById("email");
+    const phoneInput = document.getElementById("phone");
     const passwordInput = document.getElementById("password");
+    const confirmPasswordInput = document.getElementById("confirm-password");
+    const termsInput = document.getElementById("terms");
     const messageBox = document.getElementById("register-message");
+
     const name = nameInput.value.trim();
     const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
+    const phone = phoneInput.value.trim();
+    const password = passwordInput.value;
+    const confirmPassword = confirmPasswordInput.value;
+
+    // Email validation
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Phone validation
+
+    const phonePattern = /^[0-9]{10}$/;
 
     if (name === "") {
+
       showMessage(messageBox, "Please enter your full name.", false);
-    } else if (email === "") {
-      showMessage(messageBox, "Please enter your email address.", false);
-    } else if (password === "") {
-      showMessage(messageBox, "Please enter your password.", false);
-    } else if (password.length < 6) {
-      showMessage(messageBox, "Password must be at least 6 characters long.", false);
-    } else {
-      showMessage(
-        messageBox,
-        "Registration demo successful! (Demo only - no account was created or saved)",
-        true
-      );
+
     }
+
+    else if (email === "") {
+
+      showMessage(messageBox, "Please enter your email address.", false);
+
+    }
+
+    else if (!emailPattern.test(email)) {
+
+      showMessage(messageBox, "Please enter a valid email address.", false);
+
+    }
+
+    else if (phone === "") {
+
+      showMessage(messageBox, "Please enter your phone number.", false);
+
+    }
+
+    else if (!phonePattern.test(phone)) {
+
+      showMessage(messageBox, "Phone number must contain exactly 10 digits.", false);
+
+    }
+
+    else if (password === "") {
+
+      showMessage(messageBox, "Please enter your password.", false);
+
+    }
+
+    else if (password.length < 6) {
+
+      showMessage(messageBox, "Password must be at least 6 characters long.", false);
+
+    }
+
+    else if (confirmPassword === "") {
+
+      showMessage(messageBox, "Please confirm your password.", false);
+
+    }
+
+    else if (password !== confirmPassword) {
+
+      showMessage(messageBox, "Passwords do not match.", false);
+
+    }
+
+    else if (!termsInput.checked) {
+
+      showMessage(messageBox, "Please accept the Terms and Conditions.", false);
+
+    }
+
+    else {
+
+      // Get existing users from LocalStorage
+
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+
+      // Check whether email already exists
+
+      const existingUser = users.find(function (user) {
+        return user.email.toLowerCase() === email.toLowerCase();
+      });
+
+      if (existingUser) {
+
+        showMessage(messageBox, "Email is already registered!", false);
+
+      }
+
+      else {
+        // Create a new user object
+        const newUser = {
+          name: name,
+          email: email,
+          phone: phone,
+          password: password
+        };
+        // Add new user to array
+        users.push(newUser);
+
+        // Save users in LocalStorage
+
+        localStorage.setItem("users", JSON.stringify(users));
+
+        showMessage(
+          messageBox,
+          "Registration successful! Your account has been created.",
+          true
+        );
+
+        registerForm.reset();
+
+      }
+
+    }
+
   });
+
 }

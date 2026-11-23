@@ -74,3 +74,66 @@ if (menuBtn && nav) {
     nav.classList.toggle('open');
   });
 }
+ 
+// ============================================
+// Authentication Session Management
+// ============================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  // Get logged-in user from LocalStorage
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+  // Select navbar elements
+  const loginNav = document.getElementById("login-nav");
+  const registerNav = document.getElementById("register-nav");
+  const userNav = document.getElementById("user-nav");
+  const logoutNav = document.getElementById("logout-nav");
+
+  const welcomeUser = document.getElementById("welcome-user");
+  const logoutBtn = document.getElementById("logout-btn");
+
+  // Check whether user is logged in
+  if (currentUser) {
+
+    if (loginNav) {
+      loginNav.style.display = "none";
+    }
+
+    if (registerNav) {
+      registerNav.style.display = "none";
+    }
+
+    if (userNav) {
+      userNav.style.display = "block";
+    }
+
+    if (logoutNav) {
+      logoutNav.style.display = "block";
+    }
+
+    if (welcomeUser) {
+      welcomeUser.textContent = "Welcome, " + currentUser.name;
+    }
+
+  }
+
+  // Logout functionality
+  if (logoutBtn) {
+
+    logoutBtn.addEventListener("click", function () {
+
+      // Remove current user session
+      localStorage.removeItem("currentUser");
+
+      alert("You have been logged out successfully!");
+
+      // Redirect to homepage
+      window.location.href = "index.html";
+
+    });
+
+  }
+
+});
+
