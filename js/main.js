@@ -74,7 +74,7 @@ if (menuBtn && nav) {
     nav.classList.toggle('open');
   });
 }
-
+ 
 // ============================================
 // Authentication Session Management
 // ============================================
@@ -136,3 +136,4 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
+
