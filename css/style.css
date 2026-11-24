@@ -486,3 +486,25 @@ img {
     width: 100%;
   }
 }
+/* Navbar alignment fix */
+.logo {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.nav-links {
+    gap: 14px;
+    flex-wrap: nowrap;
+}
+
+.nav-links li {
+    white-space: nowrap;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+}
+
+#welcome-user {
+    white-space: nowrap;
+}

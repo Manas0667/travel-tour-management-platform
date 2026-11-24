@@ -56,15 +56,17 @@ function filterDestinations() {
 
 // Step 7: Search button par click event listener lagana
 // (Search tabhi execute hogi jab user 'Search Tours' button click karega)
-searchBtn.addEventListener('click', filterDestinations);
+if (searchBtn && searchDest) {
 
-// User search box me 'Enter' key dabakar bhi search trigger kar sakta hai
-searchDest.addEventListener('keypress', function (event) {
-  if (event.key === 'Enter') {
-    filterDestinations();
-  }
-});
+  searchBtn.addEventListener('click', filterDestinations);
 
+  searchDest.addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+      filterDestinations();
+    }
+  });
+
+}
 // Mobile menu toggle ke liye simple code
 const menuBtn = document.getElementById('menuBtn');
 const nav = document.querySelector('nav');

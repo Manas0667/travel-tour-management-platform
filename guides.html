@@ -5,26 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tour Guides - TourVista</title>
-    <link rel="stylesheet" href="guides.css">
+   <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="guides.css">
 </head>
 
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <h2 class="logo">TourVista</h2>
+   <header class="navbar">
+    <div class="container nav-inner">
 
-            <ul>
+        <a href="index.html" class="logo">🌍 TourVista</a>
+
+        <button class="menu-btn" id="menuBtn">&#9776;</button>
+
+        <nav>
+            <ul class="nav-links" id="navLinks">
+
                 <li><a href="index.html">Home</a></li>
-                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="pages/destinations.html">Destinations</a></li>
                 <li><a href="packages.html">Packages</a></li>
                 <li><a href="vehicles.html">Vehicles</a></li>
                 <li><a href="guides.html" class="active">Guides</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="planner.html">Budget Planner</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="bookings.html">Bookings</a></li>
+
+                <li id="login-nav">
+                    <a href="login.html" class="btn-login">Login</a>
+                </li>
+
+                <li id="register-nav">
+                    <a href="register.html" class="btn-register">Register</a>
+                </li>
+
+                <li id="user-nav" style="display:none;">
+                    <span id="welcome-user"></span>
+                </li>
+
+                <li id="logout-nav" style="display:none;">
+                    <button id="logout-btn" class="btn-login">Logout</button>
+                </li>
+
             </ul>
-        </div>
-    </nav>
+        </nav>
+
+    </div>
+</header>
 
     <!-- Heading -->
     <header class="page-header">
@@ -113,6 +140,7 @@
                 <a href="packages.html">Packages</a>
                 <a href="vehicles.html">Vehicles</a>
                 <a href="guides.html">Guides</a>
+                <a href="pages/destinations.html">Destinations</a>
             </div>
 
             <div>
@@ -127,7 +155,7 @@
             &copy; 2026 TourVista. All rights reserved.
         </p>
     </footer>
-
+<script src="js/main.js"></script>
 </body>
 
 </html>
