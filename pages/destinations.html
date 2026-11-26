@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <header class="navbar">
     <div class="nav-inner">
       <a href="../index.html" class="logo">🌍 TourVista</a>
@@ -17,7 +16,6 @@
         <ul class="nav-links">
           <li><a href="../index.html">Home</a></li>
           <li><a href="destinations.html" class="active">Destinations</a></li>
-          <li><a href="places.html">Places</a></li>
           <li><a href="../index.html#tours">Tours</a></li>
           <li><a href="../index.html#contact">Contact</a></li>
           <li><a href="../login.html" class="btn-login">Login</a></li>
@@ -27,50 +25,73 @@
     </div>
   </header>
 
-  <!-- PAGE HERO BANNER -->
-  <section class="page-hero">
-    <h1>🗺️ Explore Destinations</h1>
-    <p>Browse our handpicked destinations from beaches to mountains. Find your next adventure.</p>
-  </section>
+  <div id="destinations-section">
 
-  <!-- SEARCH BAR -->
-  <div class="search-bar">
-    <div class="search-inner">
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="Search destinations (e.g. Goa, Bali...)"
-      >
-      <select id="typeFilter">
-        <option value="">All Types</option>
-        <option value="beach">Beach</option>
-        <option value="mountain">Mountain</option>
-        <option value="heritage">Heritage</option>
-        <option value="international">International</option>
-      </select>
-      <button class="btn-primary" id="searchBtn">Search</button>
+    <section class="page-hero">
+      <h1>🗺️ Explore Destinations</h1>
+      <p>Browse our handpicked destinations from beaches to mountains. Find your next adventure.</p>
+    </section>
+
+    <div class="search-bar">
+      <div class="search-inner">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search destinations (e.g. Goa, Manali...)"
+        >
+        <select id="typeFilter">
+          <option value="">All Types</option>
+          <option value="beach">Beach</option>
+          <option value="mountain">Mountain</option>
+          <option value="heritage">Heritage</option>
+          <option value="international">International</option>
+        </select>
+        <button class="btn-primary" id="searchBtn">Search</button>
+      </div>
     </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>All Destinations</h2>
+          <p>Click <strong>"View Places"</strong> on any destination to explore popular attractions.</p>
+        </div>
+
+        <div class="dest-grid" id="dest-grid"></div>
+
+        <p class="no-results" id="no-results">
+          No destinations found. Try a different search.
+        </p>
+      </div>
+    </section>
+
   </div>
 
-  <!-- DESTINATIONS SECTION -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2>All Destinations</h2>
-        <p>Click "View Places" on any destination to explore specific places to visit.</p>
+  <div id="places-detail">
+
+    <div class="detail-banner">
+      <img id="detail-banner-img" src="" alt="Destination banner">
+      <div class="detail-banner-overlay">
+        <h1 id="detail-dest-name">Destination Name</h1>
+        <p id="detail-dest-tagline">Tagline / description of the destination.</p>
       </div>
-
-      <!-- Cards rendered by destinations.js -->
-      <div class="dest-grid" id="dest-grid"></div>
-
-      <!-- Shown when no results found -->
-      <p class="no-results" id="no-results">
-        No destinations found. Try a different search.
-      </p>
     </div>
-  </section>
 
-  <!-- FOOTER -->
+    <div class="back-row">
+      <button class="btn-back" id="btn-back">
+        ← Back to Destinations
+      </button>
+    </div>
+
+    <div class="places-heading">
+      <h2 id="places-section-heading">Popular Places</h2>
+      <p>Explore the must-visit attractions at this destination</p>
+    </div>
+
+    <div class="places-grid" id="places-grid"></div>
+
+  </div>
+
   <footer class="footer">
     <div class="footer-inner">
       <div>
@@ -79,15 +100,16 @@
       </div>
       <div>
         <h3>Quick Links</h3>
-        <p><a href="../index.html" style="color:#a0aec0;">Home</a></p>
-        <p><a href="destinations.html" style="color:#a0aec0;">Destinations</a></p>
-        <p><a href="places.html" style="color:#a0aec0;">Places</a></p>
-        <p><a href="../login.html" style="color:#a0aec0;">Login</a></p>
+        <p><a href="../index.html">Home</a></p>
+        <p><a href="destinations.html">Destinations</a></p>
+        <p><a href="../index.html#tours">Tours</a></p>
+        <p><a href="../login.html">Login</a></p>
       </div>
       <div>
         <h3>Contact</h3>
         <p>📧 support@tourvista.com</p>
         <p>📞 +91 98765 43210</p>
+        <p>📍 New Delhi, India</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -96,5 +118,6 @@
   </footer>
 
   <script src="../js/destinations.js"></script>
+
 </body>
 </html>
